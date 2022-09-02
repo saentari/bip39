@@ -83,6 +83,19 @@ void main() {
           });
     });
   });
+
+  group('getWordList', () {
+    test('get default (english) word list', () {
+      final words = bip39.getWordList();
+      expect(words.length, equals(2048));
+      expect(words[2047], "zoo");
+    });
+
+    test('get french word list', () {
+      final words = bip39.getWordList(language: "french");
+      expect(words[2047], "zoologie");
+    });
+  });
 }
 
 void testVector(List<dynamic> v, int i) {
