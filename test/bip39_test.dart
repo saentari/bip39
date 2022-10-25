@@ -95,6 +95,11 @@ void main() {
       final words = bip39.getWordList(language: "french");
       expect(words[2047], "zoologie");
     });
+
+    test('get korean word list', () {
+      final words = bip39.getWordList(language: "korean");
+      expect(words[2047], "힘껏");
+    });
   });
 }
 
